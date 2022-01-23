@@ -8,7 +8,7 @@
 #include <vector>
 #include <sstream>
 
-#include "..\RobotLib\ToyRobot.h"
+#include "../RobotLib/ToyRobot.h"
 
 Command ParseCommand(const std::string& cmdStr, std::tuple<int, int, Direction>& placeArgs);
 std::vector<std::string> Tokenize(const std::string& str, const std::regex& re);
@@ -37,8 +37,15 @@ int main(const int argc, char *argv[])
 
             switch (ParseCommand(cmdStr, placeArgs))
             {
+	            int yPos;
+	            int xPos;
             case Place:
-                robot.Place(std::get<0>(placeArgs), std::get<1>(placeArgs), std::get<2>(placeArgs));
+	            xPos = std::get<0>(placeArgs);
+	            yPos = std::get<1>(placeArgs);
+                if (xPos >= 0 && xPos < 5 && yPos >= 0 && yPos < 5)
+                    robot.Place(std::get<0>(placeArgs), std::get<1>(placeArgs), std::get<2>(placeArgs));
+                else
+                    std::cout << "Place arguments out of range (x,y positions must be between 0 and 4 inclusively)" << std::endl;
                 break;
             case Move:
                 robot.Move();

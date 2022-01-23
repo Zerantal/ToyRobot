@@ -88,7 +88,7 @@ std::string ToyRobot::Report(const bool generateVisual) const
 
 	if (generateVisual)
 	{
-		for (int y = TableYDim; y >= 0; y--)
+		for (int y = TableYDim-1; y >= 0; y--)
 		{
 			for (int x = 0; x < TableXDim; x++)
 			{

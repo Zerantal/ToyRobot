@@ -1,0 +1,39 @@
+PLACE 0,0,NORTH
+MOVE
+REPORT
+PLACE 0,0,NORTH
+LEFT
+REPORT
+PLACE 1,2,EAST
+MOVE
+MOVE
+LEFT
+MOVE
+REPORT
+place 5,5,North
+place 4,4,South
+report
+move
+right
+move
+report
+move
+left
+move
+report
+move
+right
+move
+report
+move
+left
+move
+report
+move
+right
+move
+report
+move
+left
+move
+report
